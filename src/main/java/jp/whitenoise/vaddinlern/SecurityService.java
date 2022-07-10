@@ -11,8 +11,6 @@ import org.springframework.stereotype.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.server.VaadinServletRequest;
 
-import jp.whitenoise.vaddinlern.ui.LoginView;
-
 @Component
 public class SecurityService {
 
@@ -36,6 +34,6 @@ public class SecurityService {
 	public void logout() {
 		SecurityContextLogoutHandler handler = new SecurityContextLogoutHandler();
 		handler.logout(VaadinServletRequest.getCurrent().getHttpServletRequest(), null, null);
-		UI.getCurrent().navigate(LoginView.class);
+		UI.getCurrent().getPage().setLocation("/");
 	}
 }
