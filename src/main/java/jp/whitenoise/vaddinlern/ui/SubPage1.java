@@ -7,7 +7,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.data.binder.ValidationResult;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 
@@ -15,12 +14,10 @@ import com.vaadin.flow.router.RouterLink;
 @PermitAll
 public class SubPage1 extends VerticalLayout {
 
-	private final Binder<SubFrom1> binder = new BeanValidationBinder<SubFrom1>(SubFrom1.class);
-
 	private final TextField name;
 	private final TextField age;
 
-	private final SubFrom1 form = new SubFrom1();
+	private final Binder<SubForm1> binder = new BeanValidationBinder<SubForm1>(SubForm1.class);
 
 	public SubPage1() {
 		add(new H2("Sub page 1"));
@@ -32,18 +29,11 @@ public class SubPage1 extends VerticalLayout {
 		age = new TextField("年齢");
 		add(age);
 
-		binder.setStatusLabel(msg);
-		binder.setBean(form);
+		SubForm1 form = new SubForm1();
 		binder.bindInstanceFields(this);
-//		binder.forField(name).withValidator((value, context) -> {
-//			return ValidationResult.error("名前エラー");
-//		}).bind(SubFrom1::getName, SubFrom1::setName);
-		binder.withValidator((value, context) -> {
-			return ValidationResult.error("エラーがあります");
-		});
-		binder.addStatusChangeListener(event -> {
-			System.out.println(event.hasValidationErrors());
-		});
+		binder.setBean(form);
+		binder.setStatusLabel(msg);
+		binder.withValidator(form.createValidator());
 		add(new RouterLink("メインページ", MainPage.class));
 	}
 }
