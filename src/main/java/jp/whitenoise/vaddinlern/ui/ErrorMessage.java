@@ -8,6 +8,7 @@ public class ErrorMessage extends Span {
 
 	public ErrorMessage() {
 		setMinWidth("30em");
+		setVisible(false);
 		
 		// Bootstrap
 //		addClassName("alert");
