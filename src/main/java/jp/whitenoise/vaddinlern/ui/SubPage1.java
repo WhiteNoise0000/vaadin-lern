@@ -34,8 +34,8 @@ public class SubPage1 extends VerticalLayout {
 		add(age);
 
 		binder.setStatusLabel(msg);
-		binder.bindInstanceFields(this);
 		binder.setBean(form);
+		binder.bindInstanceFields(this);
 //		binder.forField(name).withValidator((value, context) -> {
 //			return ValidationResult.error("名前エラー");
 //		}).bind(SubFrom1::getName, SubFrom1::setName);
