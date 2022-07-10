@@ -17,7 +17,6 @@ public class SubPage1 extends VerticalLayout {
 
 	private final Binder<SubFrom1> binder = new BeanValidationBinder<SubFrom1>(SubFrom1.class);
 
-	private final ErrorMessage msg;
 	private final TextField name;
 	private final TextField age;
 
@@ -26,7 +25,7 @@ public class SubPage1 extends VerticalLayout {
 	public SubPage1() {
 		add(new H2("Sub page 1"));
 
-		msg = new ErrorMessage();
+		ErrorMessage msg = new ErrorMessage();
 		add(msg);
 		name = new TextField("名前");
 		add(name);
