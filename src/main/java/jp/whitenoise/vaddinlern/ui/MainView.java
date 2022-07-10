@@ -2,6 +2,8 @@ package jp.whitenoise.vaddinlern.ui;
 
 import javax.annotation.security.PermitAll;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -25,7 +27,9 @@ public class MainView extends AppLayout {
 
 	private final AccessAnnotationChecker accessChecker;
 
-	public MainView(SecurityService securityService, AccessAnnotationChecker accessChecker) {
+	public MainView(
+			@Autowired SecurityService securityService, 
+			@Autowired AccessAnnotationChecker accessChecker) {
 		this.accessChecker = accessChecker;
 
 		addToNavbar(new DrawerToggle(), new H2("MyApp"));
