@@ -5,6 +5,7 @@ import javax.annotation.security.PermitAll;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.HasText.WhiteSpace;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
@@ -28,11 +29,13 @@ public class MainView extends AppLayout {
 	private final AccessAnnotationChecker accessChecker;
 
 	public MainView(
-			@Autowired SecurityService securityService, 
+			@Autowired SecurityService securityService,
 			@Autowired AccessAnnotationChecker accessChecker) {
 		this.accessChecker = accessChecker;
 
-		addToNavbar(new DrawerToggle(), new H2("MyApp"));
+		H2 title = new H2("ｘｘｘｘｘ管理トップページ");
+		title.setWhiteSpace(WhiteSpace.NOWRAP);
+		addToNavbar(new DrawerToggle(), title);
 		if (securityService.getAuthenticatedUser() != null) {
 			VerticalLayout vl = new VerticalLayout(new Button("ログアウト", click -> securityService.logout()));
 			vl.setSizeFull();
