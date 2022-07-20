@@ -8,10 +8,10 @@ public class LabelField extends CustomField<String> {
 	private final Span lblValue;
 	
 	public LabelField(String label, String val) {
-		this.lblValue = new Span();
-		setLabel(label);
-		setPresentationValue(val);
+		lblValue = new Span(val);
+		lblValue.setWidthFull();
 		add(lblValue);
+		setLabel(label);
 	}
 	@Override
 	protected String generateModelValue() {
