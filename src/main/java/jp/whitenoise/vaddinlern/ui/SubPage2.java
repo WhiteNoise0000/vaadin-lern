@@ -2,8 +2,6 @@ package jp.whitenoise.vaddinlern.ui;
 
 import javax.annotation.security.RolesAllowed;
 
-import org.vaadin.tinymce.TinyMce;
-
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Paragraph;
@@ -40,13 +38,18 @@ public class SubPage2 extends VerticalLayout {
 		//		add(editor);
 		
 		// TinyMCE
-		TinyMce editor = new TinyMce();
-		editor.setConfig("{\"language_url\": \"/ja.js\", \"language\": \"ja\", \"elementpath\": false}");
-		editor.setWidthFull();
+//		TinyMce editor = new TinyMce();
+//		editor.setConfig("{\"language_url\": \"/ja.js\", \"language\": \"ja\", \"elementpath\": false}");
+		//		editor.setWidthFull();
+//		add(editor);
+
+		NicEdit editor = new NicEdit();
+		editor.setSizeFull();
+		editor.setId("editor");
 		add(editor);
 		
 		label = new Paragraph();
-		add(new Button("入力確定", event -> label.getElement().setProperty("innerHTML", editor.getCurrentValue())));
+		add(new Button("入力確定", event -> label.getElement().setProperty("innerHTML", editor.getValue())));
 		add(label);
 		add(new RouterLink("メインページ", MainPage.class));
 	}

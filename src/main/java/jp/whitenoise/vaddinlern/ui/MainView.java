@@ -56,6 +56,7 @@ public class MainView extends AppLayout {
 		createCategory(menu, "カテゴリ2",
 				new SubMenu("サブ2-1", SubPage1.class),
 				new SubMenu("サブ2-2", SubPage2.class));
+		menu.add(new RouterLink("グリッド", SubPage3.class));
 		return menu;
 	}
 

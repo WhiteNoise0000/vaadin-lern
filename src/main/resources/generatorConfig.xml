@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="context1" targetRuntime="MyBatis3Simple">
+
+		<plugin
+			type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin
+			type="org.mybatis.generator.plugins.MapperAnnotationPlugin" />
+
+		<!-- コメント設定 -->
+		<commentGenerator>
+			<!-- 生成日時をコメント付与しない -->
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<!-- スキーマ情報を取得する DB への接続設定 -->
+		<jdbcConnection
+			connectionURL="jdbc:postgresql:dvdrental"
+			driverClass="org.postgresql.Driver" password="postgres"
+			userId="postgres" />
+
+		<javaTypeResolver>
+			<property name="useJSR310Types" value="true" />
+		</javaTypeResolver>
+
+		<!-- SELECT 結果等を格納するドメインモデルを生成する設定 -->
+		<javaModelGenerator targetPackage="mybatis.model"
+			targetProject="vaadin-lern/src/main/java">
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- マッパークラスを生成する設定 -->
+		<javaClientGenerator
+			targetPackage="mybatis.mapper"
+			targetProject="vaadin-lern/src/main/java" type="ANNOTATEDMAPPER" />
+
+		<!-- 生成対象のテーブルを指定(%でワイルドカード) -->
+		<table schema="public" tableName="%" enableInsert="true"
+			enableSelectByPrimaryKey="true" enableSelectByExample="true"
+			enableUpdateByPrimaryKey="true" enableUpdateByExample="true"
+			enableDeleteByPrimaryKey="true" enableDeleteByExample="true"
+			enableCountByExample="true" selectByExampleQueryId="true"
+			modelType="flat" />
+
+	</context>
+</generatorConfiguration>

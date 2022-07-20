@@ -35,5 +35,7 @@ public class SubPage1 extends VerticalLayout {
 		binder.setStatusLabel(msg);
 		binder.withValidator(form.createValidator());
 		add(new RouterLink("メインページ", MainPage.class));
+		
+		add(new LabelField("テスト", "読取専用"));
 	}
 }
