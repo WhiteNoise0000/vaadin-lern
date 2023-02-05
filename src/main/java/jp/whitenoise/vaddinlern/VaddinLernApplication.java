@@ -9,12 +9,11 @@ import org.springframework.context.annotation.Bean;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.page.AppShellConfigurator;
+import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.server.VaadinServiceInitListener;
 
 @SpringBootApplication
-//@Theme(themeClass = Material.class)
-//@Theme(themeClass = Lumo.class)
-//@Theme("myapp")
+@PWA(name = "Vaadin勉強", shortName = "Vaadin勉強")
 @JsModule("@vaadin/vaadin-lumo-styles/presets/compact.js")
 @CssImport("./styles/styles.css")
 public class VaddinLernApplication implements AppShellConfigurator {

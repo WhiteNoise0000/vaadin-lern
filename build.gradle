@@ -36,18 +36,21 @@ vaadin {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'com.vaadin:vaadin-spring-boot-starter'
 //	implementation 'com.wontlost:ckeditor-vaadin:2.3.4'
 	implementation 'org.vaadin:tinymce-for-flow:3.2.0'
+	implementation 'com.wontlost:zxing-vaadin:2.0.1'
+
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'org.postgresql:postgresql'
+//	runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
@@ -69,8 +72,4 @@ jar {
 bootJar {
 	// launchScript()
 	archiveFileName = 'vaadin-lern.jar'
-}
-
-bootBuildImage {
-	builder = 'paketobuildpacks/builder:tiny'
 }
