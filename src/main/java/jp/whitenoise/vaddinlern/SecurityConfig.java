@@ -13,13 +13,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
-import com.vaadin.flow.spring.security.VaadinWebSecurityConfigurerAdapter;
+import com.vaadin.flow.spring.security.VaadinWebSecurity;
 
 import jp.whitenoise.vaddinlern.ui.LoginView;
 
 @EnableWebSecurity
 @Configuration
-public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
+public class SecurityConfig extends VaadinWebSecurity {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -42,7 +42,6 @@ public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
 	 * NOTE: This should not be used in real-world applications.
 	 */
 	@Bean
-	@Override
 	public UserDetailsService userDetailsService() {
 		List<UserDetails> users = new ArrayList<>();
 		users.add(User.withUsername("user")

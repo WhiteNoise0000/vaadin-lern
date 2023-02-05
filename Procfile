@@ -1,1 +1,0 @@
-web: java -Dserver.port=$PORT -Dspring.profiles.active=heroku -Duser.language=ja -Duser.country=JP -Duser.timezone=Asia/Tokyo $JAVA_OPTS -jar build/libs/vaadin-lern.jar
