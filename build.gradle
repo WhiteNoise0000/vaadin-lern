@@ -73,3 +73,11 @@ bootJar {
 	// launchScript()
 	archiveFileName = 'vaadin-lern.jar'
 }
+
+// Podmanでビルド
+tasks.named("bootBuildImage") {
+	docker {
+		host = "unix:///run/user/1000/podman/podman.sock"
+		bindHostToBuilder = true
+	}
+}
