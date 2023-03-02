@@ -1,6 +1,6 @@
 package jp.whitenoise.vaddinlern.ui;
 
-import javax.annotation.security.PermitAll;
+import jakarta.annotation.security.PermitAll;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

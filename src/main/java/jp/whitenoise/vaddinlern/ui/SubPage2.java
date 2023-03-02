@@ -1,6 +1,6 @@
 package jp.whitenoise.vaddinlern.ui;
 
-import javax.annotation.security.RolesAllowed;
+import jakarta.annotation.security.RolesAllowed;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H2;
