@@ -1,8 +1,8 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.0.3'
+	id 'org.springframework.boot' version '3.0.4'
 	id 'io.spring.dependency-management' version '1.1.0'
-	id 'com.vaadin' version '24.0.0.rc1'
+	id 'com.vaadin' version '24.0.0'
 	// ライセンスレポート出力用プラグイン
 	id "com.github.jk1.dependency-license-report" version "2.1"
 }
@@ -28,7 +28,7 @@ repositories {
 }
 
 ext {
-	set('vaadinVersion', "24.0.0.rc1")
+	set('vaadinVersion', "24.0.0")
 }
 
 // ビルド環境判定→ローカル以外は商用ビルド
@@ -53,7 +53,7 @@ dependencies {
 	// DAO, DTO
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
 	runtimeOnly 'com.h2database:h2'
 //	runtimeOnly 'org.postgresql:postgresql'
