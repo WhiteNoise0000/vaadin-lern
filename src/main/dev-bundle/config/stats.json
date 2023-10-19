@@ -241,6 +241,7 @@
   "@vaadin/tooltip/theme/lumo/vaadin-tooltip.js",
   "@vaadin/upload/theme/lumo/vaadin-upload.js",
   "@vaadin/vaadin-lumo-styles/color-global.js",
+  "@vaadin/vaadin-lumo-styles/presets/compact.js",
   "@vaadin/vaadin-lumo-styles/sizing.js",
   "@vaadin/vaadin-lumo-styles/spacing.js",
   "@vaadin/vaadin-lumo-styles/style.js",
@@ -304,7 +305,7 @@
  },
  "themeJsonContents": {},
  "entryScripts": [
-  "VAADIN/build/indexhtml-e474f619.js"
+  "VAADIN/build/indexhtml-96dde4ec.js"
  ],
  "webComponents": [],
  "cvdlModules": {
@@ -339,6 +340,6 @@
  },
  "packageJsonHash": "043aeadfea7b9f2c2c42fa6bf1f3e3eb09ade9aee909fb4a1518c9902e6e55a3",
  "indexHtmlGenerated": [
-  "  <script type=\"module\" crossorigin src=\"./VAADIN/build/indexhtml-e474f619.js\"></script>"
+  "  <script type=\"module\" crossorigin src=\"./VAADIN/build/indexhtml-96dde4ec.js\"></script>"
  ]
 }
