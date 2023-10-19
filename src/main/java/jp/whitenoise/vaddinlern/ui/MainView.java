@@ -73,7 +73,7 @@ public class MainView extends AppLayout {
 				canAccess = true;
 			}
 		}
-		cat.setContent(layout);
+		cat.add(layout);
 
 		if (canAccess) {
 			menu.add(cat);
