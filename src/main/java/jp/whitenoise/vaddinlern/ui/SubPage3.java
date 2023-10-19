@@ -8,7 +8,7 @@ import com.vaadin.flow.router.Route;
 import com.wontlost.zxing.ZXingVaadinReader;
 import com.wontlost.zxing.Constants;
 
-@Route(value = "sub4", layout = MainView.class)
+@Route(value = "sub3", layout = MainView.class)
 @PermitAll
 public class SubPage3 extends VerticalLayout {
 
