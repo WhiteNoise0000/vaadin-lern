@@ -37,4 +37,4 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }} 
     - name: Push Docker Image
-      run: docker push ghcr.io/whitenoise0000/pnovel:latest
+      run: docker push ghcr.io/whitenoise0000/vaadin-lern:latest
