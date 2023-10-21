@@ -37,7 +37,10 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }} 
-  
+
+    - name: Setup Docker Buildx
+      run: docker buildx create --use
+
     - name: Build and push Container images
       uses: docker/build-push-action@v5
       with:
