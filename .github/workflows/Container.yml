@@ -44,7 +44,8 @@ jobs:
     - name: Build and push Container images
       uses: docker/build-push-action@v5
       with:
-        file: Containerfile
+        context: ./
+        file: ./Containerfile
         platforms: linux/amd64,linux/arm64
         push: true
         tags: ghcr.io/whitenoise0000/vaadin-lern:latest
