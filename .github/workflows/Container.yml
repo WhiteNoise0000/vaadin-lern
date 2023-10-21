@@ -1,5 +1,5 @@
 
-name: build Container image
+name: コンテナイメージ作成→プッシュ
 
 on:
   push:
@@ -29,4 +29,12 @@ jobs:
       with:
         arguments: bootJar
     - name: Build the Docker image
-      run: docker build . --file Containerfile --tag vaadin-lern:$(date +%s)
+      run: docker build . --file Containerfile --tag ghcr.io/$GITHUB_ACTOR/vaadin-lern:latest
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }} 
+    - name: Push Docker Image
+      run: docker push ghcr.io/$GITHUB_ACTOR/pnovel:latest
