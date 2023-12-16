@@ -1,16 +1,12 @@
 package jp.whitenoise.vaddinlern;
 
-import java.util.Locale;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.server.PWA;
-import com.vaadin.flow.server.VaadinServiceInitListener;
 
 @SpringBootApplication
 @PWA(name = "Vaadin勉強", shortName = "Vaadin勉強")
@@ -22,14 +18,14 @@ public class VaddinLernApplication implements AppShellConfigurator {
 		SpringApplication.run(VaddinLernApplication.class, args);
 	}
 
-	@Bean
-	VaadinServiceInitListener vaadinServiceInitListener() {
-		return event -> {
-			event.addIndexHtmlRequestListener(indexHtmlResponse -> {
-				// workaround for https://github.com/vaadin/flow/issues/13437
-				indexHtmlResponse.getDocument().head().parent()
-						.attr("lang", Locale.getDefault().getLanguage());
-			});
-		};
-	}
+	// @Bean
+	// VaadinServiceInitListener vaadinServiceInitListener() {
+	// 	return event -> {
+	// 		event.addIndexHtmlRequestListener(indexHtmlResponse -> {
+	// 			// workaround for https://github.com/vaadin/flow/issues/13437
+	// 			indexHtmlResponse.getDocument().head().parent()
+	// 					.attr("lang", Locale.getDefault().getLanguage());
+	// 		});
+	// 	};
+	// }
 }
