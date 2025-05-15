@@ -1,6 +1,7 @@
 pluginManagement {
   repositories {
-    gradlePluginPortal()
+    mavenCentral()
+    //gradlePluginPortal()
 	maven {
 		url 'https://maven.vaadin.com/vaadin-prereleases'
 	}
